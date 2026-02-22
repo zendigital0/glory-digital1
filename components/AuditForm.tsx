@@ -26,13 +26,13 @@ const AuditForm: React.FC<AuditFormProps> = ({ onSuccess }) => {
     setError(null);
 
     try {
-      // Fitur AI dihapus, langsung menyusun data untuk EmailJS
+      
       const templateParams = {
         property: String(propertyName),
         name: String(fullName),
         whatsapp: String(whatsapp),
         website: String(url),
-        // Karena AI dihapus, field score & analysis dikirim string kosong atau info default
+        
         audit_score: "N/A",
         analysis: "Permintaan audit manual via form website.",
         recommendations: "Menunggu review tim teknis.",

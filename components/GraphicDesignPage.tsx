@@ -42,7 +42,7 @@ const SmartImage: React.FC<{
   return (
     <div 
       onClick={onOpen}
-      className="group relative aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-surface-dark border border-white/5 hover:border-blue-400/30 transition-all duration-500 cursor-pointer"
+      className="group relative aspect-4/5 rounded-2rem md:rounded-[2.5rem] overflow-hidden bg-surface-dark border border-white/5 hover:border-blue-400/30 transition-all duration-500 cursor-pointer"
     >
       {/* 1. Shimmer/Skeleton Effect */}
       {status === 'loading' && (
@@ -68,7 +68,7 @@ const SmartImage: React.FC<{
       )}
 
       {/* Overlay Info */}
-      <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 z-20 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+      <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 z-20 bg-linear-to-t from-background-dark/90 via-background-dark/20 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
         <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-1 inline-block">{item.category}</span>
         <h4 className="text-lg font-black text-white leading-tight">{item.title}</h4>
       </div>
@@ -77,7 +77,7 @@ const SmartImage: React.FC<{
 };
 
 const GraphicDesignPage: React.FC<GraphicDesignPageProps> = ({ onBack }) => {
-  // SUNTIKAN STEP 2: Mapping otomatis agar semua URL Dropbox suci
+  
   const [localPortfolio] = useState<PortfolioItem[]>(
     initialPortfolio.map(item => ({
       ...item,
@@ -156,11 +156,11 @@ const GraphicDesignPage: React.FC<GraphicDesignPageProps> = ({ onBack }) => {
             </p>
           </div>
           <div className="flex gap-4 lg:justify-end">
-            <div className="p-8 bg-surface-dark rounded-[2rem] border border-white/5 text-center min-w-[140px]">
+            <div className="p-8 bg-surface-dark rounded-2rem border border-white/5 text-center min-w-140px">
               <div className="text-3xl font-black text-blue-400">1.2k+</div>
               <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Aset Dibuat</div>
             </div>
-            <div className="p-8 bg-surface-dark rounded-[2rem] border border-white/5 text-center min-w-[140px]">
+            <div className="p-8 bg-surface-dark rounded-2rem border border-white/5 text-center min-w-140px">
               <div className="text-3xl font-black text-white">100%</div>
               <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Custom Work</div>
             </div>
@@ -188,13 +188,13 @@ const GraphicDesignPage: React.FC<GraphicDesignPageProps> = ({ onBack }) => {
             </div>
           </div>
 
-          {/* Grid Portfolio dengan SmartImage */}
+          {/* Grid Portfolio */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredPortfolio.map((item, idx) => (
               <SmartImage 
                 key={item.id}
                 item={item}
-                priority={idx < 4} // Load cepat untuk 4 gambar pertama
+                priority={idx < 4} 
                 onOpen={() => openModal(idx)}
               />
             ))}
@@ -202,7 +202,7 @@ const GraphicDesignPage: React.FC<GraphicDesignPageProps> = ({ onBack }) => {
         </div>
 
         {/* CTA Banner */}
-        <div className="relative rounded-[4rem] bg-gradient-to-br from-blue-900/20 to-background-dark border border-white/10 p-12 md:p-24 text-center overflow-hidden">
+        <div className="relative rounded-[4rem] bg-linear-to-br from-blue-900/20 to-background-dark border border-white/10 p-12 md:p-24 text-center overflow-hidden">
           <div className="absolute inset-0 bg-blue-400/5 blur-[120px] pointer-events-none"></div>
           <div className="relative z-10 space-y-8">
             <h2 className="text-4xl md:text-6xl font-black text-white">Wujudkan Visi Visual Anda</h2>
@@ -216,15 +216,15 @@ const GraphicDesignPage: React.FC<GraphicDesignPageProps> = ({ onBack }) => {
         </div>
       </div>
 
-      {/* Portfolio Modal / Carousel (Gunakan link yang sudah disanitize) */}
+      {/* Portfolio Modal / Carousel */}
       {selectedIdx !== null && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-background-dark/95 backdrop-blur-xl animate-in fade-in duration-300"
+          className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8 bg-background-dark/95 backdrop-blur-xl animate-in fade-in duration-300"
           onClick={closeModal}
         >
           <button 
             onClick={closeModal}
-            className="fixed top-6 right-6 z-[110] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/10 transition-transform hover:rotate-90 shadow-2xl"
+            className="fixed top-6 right-6 z-110 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/10 transition-transform hover:rotate-90 shadow-2xl"
           >
             <span className="material-symbols-outlined text-2xl">close</span>
           </button>
@@ -240,7 +240,7 @@ const GraphicDesignPage: React.FC<GraphicDesignPageProps> = ({ onBack }) => {
               <span className="material-symbols-outlined text-5xl md:text-7xl">chevron_right</span>
             </button>
 
-            <div className="relative w-full h-[60vh] md:h-[75vh] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative w-full h-[60vh] md:h-75vh rounded-2rem md:rounded-3rem overflow-hidden border border-white/10 shadow-2xl">
               <img 
                 src={filteredPortfolio[selectedIdx].img} 
                 alt={filteredPortfolio[selectedIdx].title}

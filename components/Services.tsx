@@ -34,7 +34,7 @@ const services = [
 const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
   return (
     <div className="flex flex-col items-center w-full">
-      {/* --- GRID 2 KOLOM UNTUK SIMETRISI --- */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">
         {services.map((service) => (
           <div 
@@ -46,7 +46,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
             }}
             className="group flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-surface-dark border border-white/5 hover:border-primary/40 hover:bg-surface-dark/90 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-primary/10"
           >
-            {/* Ikon di Tengah Atas */}
+            {}
             <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-2xl bg-background-dark text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-500 transform group-hover:rotate-12">
               <span className="material-symbols-outlined text-3xl">{service.icon}</span>
             </div>
@@ -55,7 +55,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
               <h3 className="text-xl font-extrabold text-white group-hover:text-primary transition-colors tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-[250px]">
+              <p className="text-sm text-gray-500 leading-relaxed max-w-250px">
                 {service.description}
               </p>
             </div>
@@ -63,7 +63,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
         ))}
       </div>
 
-      {/* Tombol Lihat Detail di Tengah */}
+      {}
       <div className="mt-12">
         <button 
           onClick={() => onNavigate && onNavigate('all-services')}

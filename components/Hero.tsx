@@ -2,25 +2,13 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
-  const seoKeywords = ["BACKLINKS", "KEYWORDS", "RANKING #1", "ORGANIC", "CTR", "INDEXING", "CORE WEB VITALS", "ROI"];
+  const seoKeywords = ["KEYWORDS", "RANKING #1", "ORGANIC", "CTR", "INDEXING", "CORE WEB VITALS", "ROI"];
 
   return (
     <section className="relative px-6 pt-12 pb-24 text-center md:text-left overflow-hidden min-h-[80vh] flex items-center">
       {/* SEO Themed Background Image Layer */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        {/* Main Background Image - Optimized resolution from 2000 to 1400 and q=75 */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=75&w=1400" 
-            alt="SEO Analytics Background" 
-            loading="eager"
-            fetchPriority="high"
-            className="w-full h-full object-cover opacity-80 grayscale brightness-[0.2]"
-          />
-          {/* Gradients to blend image */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-transparent to-background-dark"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-background-dark/40"></div>
-        </div>
+
 
         {/* Floating Search Icons & Keywords */}
         <div className="absolute inset-0 z-1 opacity-30">
@@ -54,7 +42,7 @@ const Hero: React.FC = () => {
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-white drop-shadow-2xl">
               Dominasi Pencarian <br className="hidden md:block" />
-              dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">GLORY DIGITAL</span>
+              dengan <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-emerald-400">GLORY DIGITAL</span>
             </h1>
             <p className="text-gray-200 text-xl leading-relaxed max-w-xl mx-auto md:mx-0 font-medium drop-shadow-lg">
               Strategi SEO berbasis data untuk meningkatkan pendapatan bisnis Anda. Kami tidak menebak, kami merancang pertumbuhan untuk brand masa depan.
@@ -79,7 +67,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="hidden lg:block relative">
-          <div className="relative z-10 bg-surface-dark/60 backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] shadow-2xl overflow-hidden group">
+          <div className="relative z-10 bg-surface-dark/60 backdrop-blur-xl border border-white/10 p-8 rounded-2rem shadow-2xl overflow-hidden group">
             <div className="absolute top-0 right-0 p-4">
               <div className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold animate-bounce">
                 Data Real-time

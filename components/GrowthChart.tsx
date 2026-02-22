@@ -14,18 +14,18 @@ const GrowthChart: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 350 });
 
-  // useLayoutEffect jauh lebih cepet dari useEffect buat urusan ukuran
+  
   useLayoutEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
         setDimensions({
-          width: containerRef.current.offsetWidth - 64, // Dikurangi padding p-8 (32px x 2)
+          width: containerRef.current.offsetWidth - 64, 
           height: 350
         });
       }
     };
 
-    // Kasih delay dikit biar layout App.tsx kelar dulu
+    
     const timer = setTimeout(updateSize, 200);
     window.addEventListener('resize', updateSize);
     
@@ -38,7 +38,7 @@ const GrowthChart: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className="rounded-[2.5rem] bg-surface-dark/40 border border-white/5 p-8 relative overflow-hidden h-[500px] flex flex-col"
+      className="rounded-[2.5rem] bg-surface-dark/40 border border-white/5 p-8 relative overflow-hidden h-500px flex flex-col"
     >
       <div className="flex justify-between items-start mb-8 relative z-10">
         <div>
@@ -51,7 +51,7 @@ const GrowthChart: React.FC = () => {
       </div>
 
       <div className="flex-1 w-full relative z-10 flex items-center justify-center">
-        {/* KUNCI: Kita gak pake ResponsiveContainer lagi */}
+        {}
         {dimensions.width > 0 ? (
           <AreaChart 
             width={dimensions.width} 

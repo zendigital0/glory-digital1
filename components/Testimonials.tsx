@@ -125,7 +125,7 @@ const Testimonials: React.FC = () => {
 
   useEffect(() => {
     if (!isPaused) {
-      const interval = setInterval(nextSlide, 2000); // Delay 2 detik (2000ms)
+      const interval = setInterval(nextSlide, 2000); 
       return () => clearInterval(interval);
     }
   }, [isPaused, nextSlide]);
@@ -139,7 +139,7 @@ const Testimonials: React.FC = () => {
       </div>
 
       <div 
-        className="relative flex justify-center items-center h-[450px]"
+        className="relative flex justify-center items-center h-450px"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -163,7 +163,7 @@ const Testimonials: React.FC = () => {
                   transform: `translateX(${position * 110}%)`, 
                 }}
               >
-                <div className="relative w-[320px] md:w-[500px] shrink-0 rounded-[3rem] bg-gradient-to-br from-[#1a2e22] to-[#112217] p-10 border border-white/5 shadow-2xl group">
+                <div className="relative w-[320px] md:w-500px shrink-0 rounded-[3rem] bg-linear-to-br from-[#1a2e22] to-[#112217] p-10 border border-white/5 shadow-2xl group">
                   <span className={`material-symbols-outlined absolute top-8 right-8 text-8xl pointer-events-none transition-all duration-500
                     ${isCenter ? 'text-primary/10 scale-110' : 'text-white/5 scale-100'}
                   `}>

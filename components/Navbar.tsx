@@ -9,7 +9,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, onNavigate }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Mencegah scroll body saat menu mobile terbuka
+  
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -28,15 +28,15 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, onNavigate }) => {
   return (
     <>
       {/* 1. MAIN NAVIGATION BAR */}
-      <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
+      <nav className={`fixed top-0 left-0 right-0 z-60 transition-all duration-500 ${
         isScrolled ? 'bg-background-dark/80 backdrop-blur-md border-b border-white/5 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.2)]' : 'bg-transparent py-5'
       }`}>
         <div className={`absolute inset-0 overflow-hidden pointer-events-none z-0 transition-opacity duration-500 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-[0.03]'}`}>
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size:24px_24px"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 group cursor-pointer relative z-[70]" onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }}>
+          <div className="flex items-center gap-2 group cursor-pointer relative z-70" onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }}>
             <div className="relative">
               <span className="material-symbols-outlined text-primary text-3xl transition-transform group-hover:rotate-12 duration-500">rocket_launch</span>
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, onNavigate }) => {
 
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/5 text-white z-[70] relative active:scale-95 transition-transform"
+            className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/5 text-white z-70 relative active:scale-95 transition-transform"
           >
             <span className={`material-symbols-outlined text-2xl absolute transition-all duration-500 ${isMobileMenuOpen ? 'rotate-90 opacity-0 scale-50' : 'rotate-0 opacity-100 scale-100'}`}>menu</span>
             <span className={`material-symbols-outlined text-2xl absolute transition-all duration-500 text-primary ${isMobileMenuOpen ? 'rotate-0 opacity-100 scale-100' : '-rotate-90 opacity-0 scale-50'}`}>close</span>
@@ -61,19 +61,19 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, onNavigate }) => {
         </div>
       </nav>
 
-      {/* --- 2. BACKDROP (Lebih Simpel) --- */}
+      {/* --- 2. BACKDROP  --- */}
       <div 
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[51] md:hidden transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-51 md:hidden transition-opacity duration-500 ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      {/* --- 3. COMPACT MENU ISLAND (Simple & Modern) --- */}
-      <div className={`fixed inset-0 z-[55] md:hidden flex items-center justify-center p-8 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+      {/* --- 3. COMPACT MENU ISLAND  --- */}
+      <div className={`fixed inset-0 z-55 md:hidden flex items-center justify-center p-8 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
         isMobileMenuOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
       }`}>
-        <div className="w-full max-w-[300px] bg-surface-dark/90 border border-white/10 rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] backdrop-blur-2xl p-4 overflow-hidden flex flex-col gap-2">
+        <div className="w-full max-w-[00px bg-surface-dark/90 border border-white/10 rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] backdrop-blur-2xl p-4 overflow-hidden flex flex-col gap-2">
           
           {/* Main Nav Buttons */}
           {[
@@ -93,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, onNavigate }) => {
             </button>
           ))}
 
-          <div className="h-[1px] w-full bg-white/5 my-2"></div>
+          <div className="h-1px w-full bg-white/5 my-2"></div>
 
           {/* Services Quick Grid */}
           <div className="grid grid-cols-4 gap-2 px-1">
